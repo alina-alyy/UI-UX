@@ -1,0 +1,139 @@
+body{
+
+  box-sizing: border-box;
+   margin: 0;
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #dff9fb;
+  background-image: linear-gradient(to bottom right,#dff9fb , rgb(228, 199, 228));
+  
+
+}
+.Box{
+  height: 80%;
+  width: 50%;
+  border-radius: 10px;
+  background: white;
+  display: flex; 
+  overflow: hidden;
+}
+.left{
+  height: 100%;
+    width: 50%;
+    position: relative;
+ 
+}
+.left>img{
+  height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+
+#title {
+    position: absolute;
+    bottom: 25%;
+    left: 16px;
+    color: white;
+    font-size: 25px;
+   
+
+  
+}
+#supporting-head {
+  position: absolute;
+  bottom: 21%;
+  left: 16px;
+  color: white;
+  font-size: 20px;
+
+
+}
+#price {
+  position: absolute;
+  bottom: 10%;
+  right: 16px;
+  color: white;
+  font-size: 25px;
+
+
+}
+#span-element{
+  font-size: 15px;
+}
+.right-form{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  margin-top: 20px;
+  width: 50%;
+}
+/* #input-box{
+  width: 90%;
+  height: 5%;
+  padding: 2px;
+  padding-left: 7px;
+  margin-top: 8px; 
+  margin-bottom: 5px;
+  position: relative;
+ 
+} */
+#formattributes{
+  margin: 0;
+  margin-top: 6px;
+}
+/* #image{
+position: absolute;
+  height: 5px;
+  width: 5px;
+} */
+#input-container {
+  margin-top: 8px;
+  /* position: relative; */
+  border: 1px solid black;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+#input-container > img {
+
+ 
+  height: 20px;
+  width:20px;
+  
+
+}
+
+#input-container > input {
+  
+  border: none;
+ 
+}
+#input-container > input:active,:focus {
+  
+ outline: none;
+}
+#checkbox{
+ margin-top: 10px; 
+ width: 20px;
+ margin-left:0 ;
+ height: 15px;
+}
+button{
+  width: 40%;
+  height: 40px;
+  background: #3867d6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
