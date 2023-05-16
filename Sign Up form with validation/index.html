@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link rel="icon" href="icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <img class="bottom-logo" src="logo.svg" />
+    <nav>
+      <img src="icon.png" />
+      <h4>Anywhere app<span>.</span></h4>
+      <h4 class="nav-head">Home</h4>
+      <h4 class="nav-head">Join</h4>
+    </nav>
+    <div class="wrapper">
+      <h5>START FOR FREE</h5>
+      <h1 class="title">Create new account<span>.</span></h1>
+      <p class="sub-head">
+        Already A Member?<span style="padding-left: 5px">Log In</span>
+      </p>
+      <div style="display: flex; margin-top: 40px; width: 450px">
+        <div>
+          <div class="input-container" style="width: 100%">
+            <input
+              id="fname"
+              oninput="firstname_pattern_checker()"
+              oninput="removeStyle(this)"
+            />
+            <p class="name">First Name</p>
+            <img class="name-thumbnail" src="f.png" />
+          </div>
+          <div id="fname_error" class="error"></div>
+        </div>
+        <div>
+          <div class="input-container" style="width: 100%">
+            <input
+              id="lname"
+              oninput=" lastname_pattern_checker()"
+              oninput="removeStyle(this)"
+            />
+            <p class="name">Last Name</p>
+            <img class="name-thumbnail" src="f.png" />
+          </div>
+          <div id="lname_error" class="error"></div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; width: 420px">
+        <div class="input-container">
+          <input
+            type="date"
+            id="birthdate"
+            class="credential-input"
+            oninput="dateofbirth_pattern_checker()"
+            oninput="removeStyle(this)"
+            onfocus="this.showPicker()"
+            onclick="this.showPicker()"
+          />
+          <p class="inner-text">Date of Birth</p>
+          <img
+            class="calander-thumbnail"
+            src="calander.png"
+            id="calendar-icon"
+          
+          />
+        </div>
+        <div id="birthdate_error" class="error"></div>
+        <div class="input-container">
+          <input
+            type="email"
+            id="email"
+            class="credential-input"
+            oninput="email_pattern_checker()"
+            oninput="removeStyle(this)"
+          />
+          <p class="inner-text">Email</p>
+          <img class="email-thumbnail" src="email.png" />
+        </div>
+        <div id="email_error" class="error"></div>
+        <div class="input-container">
+          <input
+            id="pass"
+            class="credential-input"
+            type="password"
+            oninput="password_pattern_checker()"
+            oninput="removeStyle(this)"
+          />
+          <p class="inner-text">Password</p>
+          <img class="password-thumbnail" src="pass.png" onclick="passshow()" />
+        </div>
+        <div id="pass_error" class="error"></div>
+      </div>
+      <input
+        class="terms-check"
+        type="checkbox"
+        id="terms"
+        oninput="remove()"
+      />
+      <label for="terms">I agree to terms and conditions</label>
+      <div class="wrap-button"><button onclick="signup()">Sign Up</button></div>
+      <div id="message"></div>
+    </div>
+    <h1 class="tagline">
+      "Let us take you on a trip of a <span>lifetime</span>"
+    </h1>
+  </body>
+  <script src="script.js"></script>
+</html>

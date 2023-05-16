@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  font-family: "segoe UI";
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+body {
+  margin: 0;
+  background-image: linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 0.859),
+      rgba(0, 0, 0, 0.53)
+    ),
+    url("image.jpg");
+  background-size: cover;
+  color: white;
+}
+
+nav {
+  height: 15%;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 120px;
+}
+.wrapper {
+  height: 70%;
+  width: 50%;
+  margin-left: 120px;
+  margin-top: 3%;
+  padding-left: 25px;
+  margin-right: 0;
+}
+
+.bottom-logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 40px;
+  height: 100px;
+  width: 100px;
+}
+
+input {
+  color: white;
+  padding-left: 14px;
+  font-size: 1rem;
+  padding-top: 12px;
+}
+
+p {
+  color: rgb(158, 171, 180);
+}
+
+input:focus {
+  outline: 2px solid #829fff;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+button {
+  height: 50px;
+  margin-right: 30px;
+  background-color: #829fff;
+  border: none;
+  border-radius: 25px;
+  width: 157px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+button:hover {
+  background-color: #9baff0;
+}
+.tagline {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  transform: translateY(-50%);
+  transform: translateX(-20%);
+  font-size: 2.5rem;
+  width: 600px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+input {
+  height: 50px;
+  margin-right: 30px;
+  background-color: rgba(75, 97, 111, 0.651);
+  border: none;
+  border-radius: 10px;
+}
+.credential-input {
+  margin-top: 20px;
+  height: 50px;
+  background-color: rgba(75, 97, 111, 0.651);
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+}
+.email-thumbnail {
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-top: 10px;
+  margin-right: 8px;
+}
+.password-thumbnail {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-top: 10px;
+  margin-right: 8px;
+}
+.inner-text {
+  position: absolute;
+  font-size: 12px;
+  margin-top: 24px;
+  margin-left: 14px;
+  top: 0;
+}
+.calander-thumbnail {
+  height: 18px;
+  width: 23px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-top: 10px;
+  margin-right: 8px;
+}
+
+.name-thumbnail {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-right: 38px;
+}
+.name {
+  position: absolute;
+  font-size: 12px;
+  margin-top: 6px;
+  margin-left: 14px;
+  top: 0;
+}
+.title {
+  padding-top: 5px;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+.sub-head {
+  padding-top: 20px;
+  color: rgb(158, 171, 180);
+}
+span {
+  color: #829fff;
+}
+.wrap-button {
+  display: flex;
+  margin-top: 30px;
+}
+h5 {
+  color: rgb(158, 171, 180);
+}
+
+::placeholder {
+  color: rgb(158, 171, 180);
+}
+
+.error-style {
+  border: 2px solid white;
+}
+ol {
+  padding-left: 20px;
+}
+.error > p {
+  color: white;
+}
+.nav-head {
+  margin-left: 90px;
+  color: rgb(158, 171, 180);
+}
+
+.terms-check {
+  height: fit-content;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+#message {
+  padding-bottom: 20px;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  z-index: 6;
+  margin-right: 10px;
+  height: 20px;
+  opacity: 0;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .tagline {
+    display: none;
+  }
+  .wrapper {
+    margin-left: 20px;
+    padding-left: 0;
+  }
+  nav {
+    margin-left: 20px;
+    padding-left: 0;
+  }
+  .bottom-logo {
+    width: 0;
+    height: 0;
+  }
+}
