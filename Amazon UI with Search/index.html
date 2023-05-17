@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    
+    <nav>
+      <div class="search-bar" id="content_search">
+        <input
+          type="text"
+          name="query"
+          placeholder="Search Title, Platform, Category"
+          id="_query"
+        />
+        <input type="button" onclick="search_products_new()" value="Search" />
+        <span><h3 id="error_message" class="error"></h3></span>
+      </div>
+    </nav>
+
+  </div>
+    <div id="content_preview" class="product-container">
+      
+    </div>
+  </body>
+</html>
+
+<script>
+  function search_products_new() {
+    var query = _query.value.toLowerCase()
+    content_preview.innerHTML = ""
+
+    var products = [
+      { name: "Airpods", category: "electroacoustic transducers, which convert an electrical signal to a corresponding sound", price: "29.99$", bestSeller: '<div class="best-seller">Best Seller</div>' },
+      { name: "Battery", category: "electroacoustic transducers, which convert an electrical signal to a corresponding sound", price: "", bestSeller: "" },
+      { name: "Camera", category: "electroacoustic transducers, which convert an electrical signal to a corresponding sound", price: "109.99$", bestSeller: '<div class="best-seller">Best Seller</div>' },
+      { name: "Headphones", category: "electroacoustic transducers, which convert an electrical signal to a corresponding sound", price: "49.99$", bestSeller: "" },
+      { name: "Ipads", category: "", price: "49.99$", bestSeller: "" },
+      { name: "Samsung Phone", category: "electroacoustic transducers, which convert an electrical signal to a corresponding sound", price: "49.99$", bestSeller: "" },
+      { name: "SmartWatch", category: "electroacoustic transducers, which convert an electrical signal to a corresponding sound", price: "", bestSeller: '<div class="best-seller">Best Seller</div>' },
+      { name: "Watch", category: "", price: "109.99$", bestSeller: "" },
+      { name: "Dress", category: "Clothing", price: "109.99$", bestSeller: '<div class="best-seller">Best Seller</div>' },
+      { name: "Dress2", category: "Clothing", price: "109.99$", bestSeller: "" }
+    ]
+
+    var foundProducts = products.filter(function(product){
+        curProductName = product["name"].toLowerCase()
+        category = product["category"].toLowerCase()
+        price = product["price"]
+
+        // return curProductName === query || deviceType === query || price === query
+        return curProductName.includes(query) || category.includes(query)
+    })
+
+    console.log(foundProducts)
+
+     if(foundProducts.length === 0){
+       content_preview.innerHTML = "<div class='text-center message'><h2>No Results Found</h2><h3>There are no results matching the searched item </h3></div>";
+         document.getElementById("content_preview").classList.add("products");
+        return
+    }
+
+    for(i=0; i<foundProducts.length; i++){
+        searched_products = `<div class="product-card">
+
+        <img class="product-image" src="${foundProducts[i]["name"]}.jpg"/>
+        ${foundProducts[i]["bestSeller"]}
+        <div class="product-title">
+          <h3>${foundProducts[i]["name"]}</h3>
+         
+        </div>
+        <p style="font-size: 12px;">${foundProducts[i]["category"]}</p>
+        <div class="product-reviews">
+          <img height="16px" width="16px" src="icons8-star-48.png"/>
+          <img height="16px" width="16px" src="icons8-star-48.png"/>
+          <img height="16px" width="16px" src="icons8-star-48.png"/>
+          <img height="16px" width="16px" src="icons8-star-48.png"/>
+          <span style="margin-left: 10px;">(123)</span>
+        </div>
+        <h3>${foundProducts[i]["price"]}</h3>
+      </div>`;
+      
+      content_preview.innerHTML += searched_products;
+    }
+  }
+</script>
