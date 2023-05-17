@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    
+    <nav>
+      <div class="logo"></div>
+      <div class="search-bar" id="content_search">
+        <input
+          type="text"
+          name="query"
+          placeholder="Search Title, Platform, Category"
+          id="_query"
+        />
+        <input type="button" onclick="search_products_new()" value="Search" />
+
+      </div>
+      <div style='position:relative; margin-top:1%; margin-right: auto;'>
+        <img src='shopping-cart.png'> 
+        <button class='cartbtn' id='cartcount' style='position:absolute; background-color: "red"; border-radius:50px;'>
+      </div>
+      
+    </nav>
+    <div class="main">
+    <div class="landing-nav"></div>
+    <div style="width: 80%;">
+     <div id="heading" style="display: inline-block; margin-left: 30px; margin-top: 30px;margin-bottom: 30px;">
+     
+    </div>
+    <div id="content_preview" class="product-container">
+   </div>
+    </div>
+  </div>
+
+    </body>
+
+  </body>
+</html>
+
+<script>
+  var cartCount = 0
+   var cartitem=""
+  function addtoCart() {
+    cartCount += 1
+    cartcount.innerHTML = cartCount
+  }
+  function cart(){
+ 
+    
+  }
+
+  function search_products_new() {
+    listtogrid()
+
+
+    var query = _query.value.toLowerCase()
+    content_preview.innerHTML = ""
+    heading.innerHTML="<h1>Result</h1>  <button id='gridview' onclick='gridtolist()'><img src='iconlist.png'></button><button onclick='listtogrid()'><img src='icon.png'></button>"
+   
+   
+
+    var products = [
+      { name: "killzone",category: "PS4", price: "29.99$", rating: 4 },
+      { name: "Last of US",category:"Ps4", price: "20$", rating: 2 },
+      { name: "horizon",category: "PS4", price: "109.99$", rating: 5 },
+      { name: "Nike Red Shoes", category: "shoes", price: "49.99$", rating: 1 },
+      { name: "uncharted4", category: "PS4", price: "49.99$",rating: 5 },
+      { name: "White Plastic Chair",category: "furniture", price: "49.99$",  rating: 3 },
+     
+     
+    ]
+
+    var foundProducts = products.filter(function(product){
+        curProductName = product["name"].toLowerCase()
+        category = product["category"].toLowerCase()
+        price = product["price"]
+
+        // return curProductName === query || deviceType === query || price === query
+        return curProductName.includes(query) || category.includes(query)
+       
+    })
+    
+    console.log(foundProducts)
+
+     if(foundProducts.length === 0){
+       content_preview.innerHTML = "<div class='text-center message'><h2>No Results Found</h2><h3>There are no results matching the searched item </h3></div>";
+         document.getElementById("content_preview").classList.add("products");
+        return
+    }
+
+    for(i=0; i<foundProducts.length; i++){
+        var ratingStars = ""
+
+        for(j=0; j<foundProducts[i]["rating"]; j++){
+          ratingStars += '<img height="16px" width="16px" src="icons8-star-48.png"/>'
+        }
+
+        searched_products = `<div class="product-card " id="card" >
+       
+        <img class="product-image" id="prd-image" src="${foundProducts[i]["name"]}.jpg"/>
+      
+        <div>
+        <div class="product-title">
+          <h3>${foundProducts[i]["name"]}</h3>
+         
+        </div>
+        <p style="font-size: 12px;">${foundProducts[i]["category"]}</p>
+        <div class="product-reviews">
+          ${ratingStars}
+          <span style="margin-left: 10px;">(123)</span>
+        </div>
+        <h3>${foundProducts[i]["price"]}</h3>
+        <button class="buttonn" onclick="addtoCart()">Add Cart</button>
+        </div>
+      </div>`;
+      
+      content_preview.innerHTML += searched_products;
+    }
+  }
+
+  function gridtolist(){
+    var element = document.getElementById("content_preview");
+    var element1 = document.querySelectorAll(".product-card");
+    var element2 = document.querySelectorAll(".product-image");
+  element.classList.remove("product-container");
+  element.classList.add("product-container-list")
+
+  for(i=0;i<element2.length;i++){
+    element2[i].classList.remove("product-image")
+  element2[i].classList.add("product-image-list")
+  }
+  for(i=0;i<element1.length;i++){
+    element1[i].classList.remove("product-card")
+  element1[i].classList.add("product-card-list")
+
+  }
+
+  }
+
+  function listtogrid(){
+    var element = document.getElementById("content_preview");
+    var element1 = document.querySelectorAll(".product-card-list");
+    var element2 = document.querySelectorAll(".product-image-list");
+  element.classList.add("product-container");
+  element.classList.remove("product-container-list")
+
+  for(i=0;i<element2.length;i++){
+    element2[i].classList.add("product-image")
+  element2[i].classList.remove("product-image-list")
+  }
+  for(i=0;i<element1.length;i++){
+    element1[i].classList.add("product-card")
+  element1[i].classList.remove("product-card-list")
+
+  }
+
+  }
+</script>
