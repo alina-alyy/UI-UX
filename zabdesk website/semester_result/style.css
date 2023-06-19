@@ -1,0 +1,311 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+
+.sub-menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.sub-menu a:hover {
+  color: #69a5fe;
+}
+
+.sub-menu li {
+  padding: 4px;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #686565;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.menu-item:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sub-menu {
+  width: 200px;
+  display: none; /* Hide sub-menu by default */
+  position: absolute; /* Position the sub-menu absolutely */
+  top: 0; /* Align the sub-menu with the top of the parent item */
+  left: 100%; /* Position the sub-menu to the right of the parent item */
+  background-color: #ffffff; /* Set the background color of the sub-menu */
+  padding: 0.5rem; /* Add some padding to the sub-menu */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; /* Add a box shadow to the sub-menu */
+  border-radius: 10px; /* Add border radius to the sub-menu */
+  z-index: 5;
+}
+
+.menu-item.active .sub-menu {
+  display: block; /* Show sub-menu when menu item is active */
+}
+
+
+.menu {
+  margin-top: 4rem;
+}
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  height: 50px;
+  width: 60px;
+  margin-top: 1.5rem;
+}
+
+.menu-item:hover {
+   background-color: #69A5FE;
+}
+
+main {
+  /* background-color: black; */
+  height: 100%;
+  width: 95%;
+  margin-left: 2em;
+}
+
+H3{
+  font-size: 2rem;
+  font-weight: 500;
+  margin-left: 5%;
+  text-align: center;
+  color:#0056b3;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  /* min-height: 100vh; */
+  display: flex;
+  height: 100vh;
+  background-color: #F4F6F8;
+  padding: 2em 1.2em;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
+  height: 100%;
+  width: 5%;
+  border-radius: 10px;
+  padding-top: 1rem;
+}
+
+.container {
+  bottom: 50%;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  background-color:#69A5FE;
+  width: 95%;
+  margin-left: 2%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: black;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 120px;
+  border: 2px solid blue;
+  border-top: none;
+  background-color: white;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  
+
+  .gpa-table-section {
+    width: 30%;
+    margin-right: 40px;
+  }
+  
+  .gpa-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .gpa-table caption {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .gpa-table th,
+  .gpa-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .result-section {
+    width: 70%;
+  }
+  
+  .semester-result-section {
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .semester-result-section h2 {
+    color: rgb(0, 38, 161);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .result-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 0 auto;
+  }
+  
+  .result-table th,
+  .result-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .result-table th {
+    font-weight: bold;
+  }
+  
+  
+  /* Current Semester Courses */
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .tbl-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  
+  .tbl-courses {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .tbl-courses th,
+  .tbl-courses td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .tbl-courses th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  .tbl-courses td a {
+    text-decoration: none;
+    color: rgb(0, 38, 161);
+  }
+  
+  .tbl-courses td a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Printing Report */
+  
+  .report-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 14px;
+    border: 1px solid #ccc;
+  }
+  
+  .report-table td {
+    padding: 10px;
+  }
+  
+  .print-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .print-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .print-button:hover {
+    background-color: #0056b3;
+  }

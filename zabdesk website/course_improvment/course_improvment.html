@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>ZABDESK</title>
+  </head>
+  <body>
+    <aside>
+      <img src="../logo.png" width="64" height="64" />
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="../home/home.html" class="tooltip">
+            <img src="../home.png" width="30" />
+            <span class="tooltiptext">Home</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="tooltip">
+            <img src="../courses.png" width="30" />
+            <span class="tooltiptext">Courses</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="../course_registration/course_registration.html">Course Registration</a></li>
+            <li><a href="../course_withdraw/course_withdraw.html">Course Withdrawal</a></li>
+            <li><a href="../course_improvment/course_improvment.html">Course Improvement</a></li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="../weekly_schedule/weekly_schedule.html" class="tooltip">
+            <img src="../sc.png" width="30" />
+            <span class="tooltiptext">Schedule</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="tooltip">
+            <img src="../semester.png" width="30" />
+            <span class="tooltiptext">Semester</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="../current_semester/current_semester.html">Current Semester</a></li>
+            <li><a href="../previous_semester/previous_semester.html">Previous Semester</a></li>
+            <li><a href="../semester_result/semester_result.html">Semester Result</a></li>
+            <li><a href="../printing_report/printing_report.html">Printing Report</a></li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="../change_password/password.html" class="tooltip">
+            <img src="../setting.png" width="30" />
+            <span class="tooltiptext">Settings</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="../index.html" class="tooltip">
+            <img src="../logout.png" width="30" />
+            <span class="tooltiptext">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <h1>Course Improvment</h1>
+     
+      <table id="student-info" class="table">
+        <tr>
+          <td>Select</td>
+          <td>Course id</td>
+          <td>Courses</td>
+          <td>Instructor</td>
+          <td>Credit Hours</td>
+          <td>GPA</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>CS10112</td>
+          <td>Numerical Computing</td>
+          <td>Syed Sujaad Hussain</td>
+          <td>3 Hours</td>
+          <td>3.12</td>
+        </tr>
+         <tr>
+            <td><input type="checkbox"/></td>
+            <td>CS20112</td>
+          <td>User Interface</td>
+          <td>Ali Mobin</td>
+          <td>2 Hours </td>
+          <td>2.5 </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td>CS11112</td>
+          <td>Sociology</td>
+          <td>Faiz Siddique</td>
+          <td>3 Hours</td>
+          <td>1.99</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td>CS30112</td>
+          <td>Finite Automata</td>
+          <td>Khuwaja Ali</td>
+          <td>2.5 Hours</td>
+          <td>2.75 </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td>CS10212</td>
+          <td>Proffesional Practices</td>
+          <td>Asif Khalid</td>
+          <td>3 Hours</td>
+          <td>3.75 </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td>CS19112</td>
+          <td>Islamiat</td>
+          <td>Khalid Quresshi</td>
+          <td>3 Hours</td>
+          <td>2.25</td>
+        </tr>
+      
+        <!-- Other rows -->
+      </table>
+      <button onclick="submitSelection()">Submit</button>
+
+      <h1 style="margin-top: 0.5em;">Your Improvment Courses</h1> 
+      <table id="selected-courses" class="table">
+        <tr>
+          <td>Serial</td>
+          <td>Course id</td>
+          <td>Courses</td>
+          <td>Instructor</td>
+          <td>Credit Hours</td>
+          <td>Status</td>
+        </tr>
+      </table>
+    </main>
+    <script>
+      var searchInput = document.getElementById('search');
+      var searchButton = document.querySelector('input[type="button"]');
+      var selectedCourses = [];
+    
+
+      // Function to search the table
+      function searchTable() {
+        var searchTerm = searchInput.value.toLowerCase();
+        var table = document.getElementById('student-info');
+        var rows = table.getElementsByTagName('tr');
+
+        // Loop through all rows and hide those that don't match the search term
+        for (var i = 1; i < rows.length; i++) {
+          // Start from index 1 to skip the header row
+          var courseData = rows[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+          var instructorData = rows[i].getElementsByTagName('td')[2].textContent.toLowerCase();
+          if (courseData.includes(searchTerm) || instructorData.includes(searchTerm)) {
+            rows[i].style.display = '';
+          } else {
+            rows[i].style.display = 'none';
+          }
+        }
+      }
+      function submitSelection() {
+  var table = document.getElementById('student-info');
+  var rows = table.getElementsByTagName('tr');
+
+  // Loop through all rows and move selected rows to the selected courses table
+  for (var i = 1; i < rows.length; i++) {
+    var checkbox = rows[i].getElementsByTagName('td')[0].querySelector('input[type="checkbox"]');
+    if (checkbox.checked) {
+      var courseid = rows[i].getElementsByTagName('td')[1].textContent;
+      var course = rows[i].getElementsByTagName('td')[2].textContent;
+      var instructor = rows[i].getElementsByTagName('td')[3].textContent;
+      var creditHours = rows[i].getElementsByTagName('td')[4].textContent;
+      selectedCourses.push({ course: course, instructor: instructor, creditHours: creditHours, courseid: courseid });
+      table.deleteRow(i);
+      i--;
+    }
+  }
+
+  // Update the selected courses table
+  var selectedTable = document.getElementById('selected-courses');
+  selectedTable.innerHTML = '<tr><td>Serial </td><td>Course id </td><td>Courses</td><td>Instructor</td><td>Credit Hours</td><td>Status</td></tr>';
+  var curNo = 1;
+  for (var i = 0; i < selectedCourses.length; i++, curNo++) {
+    var newRow = selectedTable.insertRow();
+    var serial = newRow.insertCell();
+    var courseIdCell = newRow.insertCell();
+    var courseCell = newRow.insertCell();
+    var instructorCell = newRow.insertCell();
+    var creditHoursCell = newRow.insertCell();
+
+    var statusCell = newRow.insertCell();
+
+    serial.textContent = curNo;
+    courseIdCell.textContent = selectedCourses[i].courseid;
+    courseCell.textContent = selectedCourses[i].course;
+    instructorCell.textContent = selectedCourses[i].instructor;
+    creditHoursCell.textContent = selectedCourses[i].creditHours;
+    statusCell.textContent = curNo % 2 === 0 ? 'Disapprove' : 'Approved';
+  }
+}
+
+    </script>
+  </body>
+</html>
+
+
+<script>
+$(document).ready(function() {
+$('.menu-item').click(function() {
+  $(this).toggleClass('active'); // Toggle the 'active' class on menu item click
+});
+});
+</script>

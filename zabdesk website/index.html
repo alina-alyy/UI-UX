@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SZABIST- LOGIN</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav>
+      <img src="logofull.png" width="200px" />
+    </nav>
+    <div class="wrapper">
+      <section>
+        <h1 class="title" style="color: black">Log In</h1>
+        <div style="display: flex; flex-direction: column; width: 420px">
+          <div id="birthdate_error" class="error"></div>
+          <div class="input-container">
+            <input
+              type="email"
+              id="email"
+              class="credential-input"
+              oninput="email_pattern_checker()"
+              oninput="removeStyle(this)"
+            />
+            <p class="inner-text">Email</p>
+            <img class="email-thumbnail" src="email.png" />
+          </div>
+          <div id="email_error" class="error"></div>
+          <div class="input-container">
+            <input
+              id="pass"
+              class="credential-input"
+              type="password"
+              oninput="removeStyle(this)"
+            />
+            <p class="inner-text">Password</p>
+            <img
+              class="password-thumbnail"
+              src="pass.png"
+              onclick="passshow()"
+            />
+          </div>
+          <div id="pass_error" class="error"></div>
+        </div>
+        <div class="wrap-button">
+          <button onclick="signup()">Log In</button>
+        </div>
+        <div id="message"></div>
+      </section>
+      <div class="notice-board" style="margin-left: 50px;">
+        <h2>Notice Board</h2>
+        <div class="card-list">
+          <div class="card" style="border-radius: 25px; background-color:  #0C54A3; ">
+            <div>
+              <p class="card-title" style="padding: 10px; padding-bottom: 0; color: white;" >Fee Notice</p>
+              <br/>
+              <p class="card-des" style="padding: 10px; padding-top: 0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores explicabo officiis iure qui facilis consequatur expedita dignissimos facere voluptatum fuga error atque illo doloremque numquam, ipsum quos, officia deleniti vitae.</p>
+          </div>
+          </div>
+          <div class="card"style="border-radius: 25px; background-color:  #0C54A3;"><div>
+            <p class="card-title" style="padding: 10px; padding-bottom: 0;  color: white;">Fee Notice</p>
+            <br/>
+            <p class="card-des"  style="padding: 10px; padding-top: 0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores explicabo officiis iure qui facilis consequatur expedita dignissimos facere voluptatum fuga error atque illo doloremque numquam, ipsum quos, officia deleniti vitae.</p>
+        </div></div>
+          <div class="card" style="border-radius: 25px; background-color:  #0C54A3;"><div>
+            <p class="card-title"style="padding: 10px; padding-bottom: 0;  color: white;">Fee Notice</p>
+            <br/>
+            <p class="card-des"  style="padding: 10px; padding-top: 0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores explicabo officiis iure qui facilis consequatur expedita dignissimos facere voluptatum fuga error atque illo doloremque numquam, ipsum quos, officia deleniti vitae.</p>
+        </div></div>
+          <div class="card"style="border-radius: 25px;background-color:  #0C54A3;"><div>
+            <p class="card-title"style="padding: 10px; padding-bottom: 0;  color: white;">Fee Notice</p>
+            <br/>
+            <p class="card-des"style="padding: 10px; padding-top: 0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores explicabo officiis iure qui facilis consequatur expedita dignissimos facere voluptatum fuga error atque illo doloremque numquam, ipsum quos, officia deleniti vitae.</p>
+        </div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

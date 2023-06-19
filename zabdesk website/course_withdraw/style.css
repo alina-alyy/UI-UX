@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  /* min-height: 100vh; */
+  display: flex;
+  height: 100vh;
+  background-color: #f4f6f8;
+  padding: 2em 1.2em;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  height: 100%;
+  width: 5%;
+  border-radius: 10px;
+  padding-top: 1rem;
+}
+
+
+.sub-menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.sub-menu a:hover {
+  color: #69a5fe;
+}
+
+.sub-menu li {
+  padding: 4px;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #686565;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.menu-item:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sub-menu {
+  width: 200px;
+  display: none; /* Hide sub-menu by default */
+  position: absolute; /* Position the sub-menu absolutely */
+  top: 0; /* Align the sub-menu with the top of the parent item */
+  left: 100%; /* Position the sub-menu to the right of the parent item */
+  background-color: #ffffff; /* Set the background color of the sub-menu */
+  padding: 0.5rem; /* Add some padding to the sub-menu */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; /* Add a box shadow to the sub-menu */
+  border-radius: 10px; /* Add border radius to the sub-menu */
+  z-index: 5;
+}
+
+.menu-item.active .sub-menu {
+  display: block; /* Show sub-menu when menu item is active */
+}
+
+.menu {
+  margin-top: 4rem;
+}
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  height: 50px;
+  width: 60px;
+  margin-top: 1.5rem;
+}
+
+.menu-item:hover {
+  background-color: #69a5fe;
+}
+
+main {
+  /* background-color: black; */
+  height: 100%;
+  width: 95%;
+  margin-left: 2em;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: black;
+}
+
+.profile-image {
+  margin-top: 3em;
+  height: 200px;
+  width: fit-content;
+  /* border-radius: 50%; */
+  /* background-color: aqua; */
+}
+
+.profile-image > img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+#student-info {
+  margin-top: 2em;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f8fafb;
+}
+.table tr:hover {
+  background-color: #b9d4fa;
+}
+
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+td > input,
+select {
+  padding: 2px;
+}
+
+td:first-child {
+  width: 30%;
+}
+
+#search {
+  width: 50%;
+  height: 5%;
+  padding-left: 20px;
+  margin-top: 2%;
+  border-radius: 25px;
+  background: none;
+  background: url(../search.png) no-repeat right 10px center;
+  background-size: 20px;
+}
+
+::placeholder {
+  padding: 15px;
+}
+td:first-child {
+  width: 5%;
+}
+
+button {
+  border-radius: 4px;
+  padding: 10px;
+  width: 100px;
+  font-weight: 600;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.withdraw-button {
+  color: white;
+  margin-top: 10px;
+  background-color: indianred;
+}
+
+.withdraw-button:hover {
+  background-color: rgb(197, 66, 66);
+}
+
+.warning {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1%;
+  justify-content: center;
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}

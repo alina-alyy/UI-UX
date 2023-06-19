@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>ZABDESK</title>
+  </head>
+  <body>
+    <aside>
+      <img src="../logo.png" width="64" height="64" />
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="../home/home.html" class="tooltip">
+            <img src="../home.png" width="30" />
+            <span class="tooltiptext">Home</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="tooltip">
+            <img src="../courses.png" width="30" />
+            <span class="tooltiptext">Courses</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="../course_registration/course_registration.html">Course Registration</a></li>
+            <li><a href="../course_withdraw/course_withdraw.html">Course Withdrawal</a></li>
+            <li><a href="../course_improvment/course_improvment.html">Course Improvement</a></li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="../weekly_schedule/weekly_schedule.html" class="tooltip">
+            <img src="../sc.png" width="30" />
+            <span class="tooltiptext">Schedule</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="tooltip">
+            <img src="../semester.png" width="30" />
+            <span class="tooltiptext">Semester</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="../current_semester/current_semester.html">Current Semester</a></li>
+            <li><a href="../previous_semester/previous_semester.html">Previous Semester</a></li>
+            <li><a href="../semester_result/semester_result.html">Semester Result</a></li>
+            <li><a href="../printing_report/printing_report.html">Printing Report</a></li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="../change_password/password.html" class="tooltip">
+            <img src="../setting.png" width="30" />
+            <span class="tooltiptext">Settings</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="../index.html" class="tooltip">
+            <img src="../logout.png" width="30" />
+            <span class="tooltiptext">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <h1>Current Semester</h1>
+      <div class="info-cards">
+        <div class="card">
+          <div style="height: 60%">
+            <p class="card-title">
+              <span style="color: #afafaf">CSC4101 </span>Artificial
+              Intelligence
+            </p>
+            <p class="card-des">Sir Ali Zaman</p>
+            <p class="card-des">BSCS 6-C</p>
+            <br />
+            <p class="card-des" style="color: black">
+              The objective of the course is to present an overview of
+              artificial intelligence (AI) principles and approaches. Develop a
+              basic understanding of the building blocks
+            </p>
+          </div>
+          <div class="card-buttons">
+            <button onclick="nav()"><a href="../course_recapsheet/course_recap.html">Recap</a></button>
+            <button>Files</button>
+          </div>
+        </div>
+        <div class="card">
+          <div style="height: 60%">
+            <p class="card-title">
+              <span style="color: #afafaf">CSC4724</span> User Interface Design
+            </p>
+            <p class="card-des">Sir Ali Mobin Memon</p>
+            <p class="card-des">BSCS 6-C</p>
+            <br />
+            <p class="card-des" style="color: black">
+              Understand and implement UI Designing concepts with advanced
+              skills such as designing responsive, artistic, 3d and vector based
+              objects into UI of a web application.
+            </p>
+          </div>
+          <div class="card-buttons">
+            <button onclick="nav()"><a href="../course_recapsheet/course_recap.html">Recap</a></button>
+            <button>Files</button>
+          </div>
+        </div>
+        <div class="card">
+          <div style="height: 60%">
+            <p class="card-title">
+              <span style="color: #afafaf">CSC1205 </span>Technical and Business
+              Writing
+            </p>
+            <p class="card-des">Sir Muhammad Younus</p>
+            <p class="card-des">BSCS 6-C</p>
+            <br />
+            <p class="card-des" style="color: black">
+              Students will be able to demonstrate the use of basic and advanced
+              professional communication techniques
+            </p>
+          </div>
+          <div class="card-buttons">
+            <button onclick="nav()"><a href="../course_recapsheet/course_recap.html">Recap</a></button>
+            <button>Files</button>
+          </div>
+        </div>
+        <div class="card">
+          <div style="height: 60%">
+            <p class="card-title">
+              <span style="color: #afafaf">CSC4802 </span>Android Development
+            </p>
+            <p class="card-des">Sir Hussain Mehboob</p>
+            <p class="card-des">BSCS 6-C</p>
+            <br />
+            <p class="card-des" style="color: black">
+              The Objective of the Course is to develop tools such as Eclipse,
+              DDMS, Listeners, and using various Layouts and Widgets in Android
+              Applications.
+            </p>
+          </div>
+          <div class="card-buttons">
+            <button onclick="nav()"><a href="../course_recapsheet/course_recap.html">Recap</a></button>
+            <button>Files</button>
+          </div>
+        </div>
+        <div class="card">
+          <div style="height: 60%">
+            <p class="card-title">
+              <span style="color: #afafaf">CSCL3205 </span>CNDC
+            </p>
+            <p class="card-des">Sir Sheikh Usama Khalid</p>
+            <p class="card-des">BSCS 6-C</p>
+            <br />
+            <p class="card-des" style="color: black">
+              Course Objective The objective of this lab session would be to
+              give students about two popular tools used in networking for
+              monitoring and building different
+            </p>
+          </div>
+          <div class="card-buttons">
+            <button onclick="nav()"><a href="../course_recapsheet/course_recap.html">Recap</a></button>
+            <button>Files</button>
+          </div>
+        </div>
+        <div class="card">
+          <div style="height: 60%">
+            <p class="card-title">
+              <span style="color: #afafaf">CSCL4101 </span>LAB: Artificial Intelligence
+            </p>
+            <p class="card-des">Sir Sheikh Usama Khalid</p>
+            <p class="card-des">BSCS 6-C</p>
+            <br />
+            <p class="card-des" style="color: black">
+              The objective of the course is to present an overview of
+              artificial intelligence (AI) principles and approaches. Develop a
+              basic understanding
+            </p>
+          </div>
+          <div class="card-buttons">
+            <button onclick="nav()"><a href="../course_recapsheet/course_recap.html">Recap</a></button>
+            <button>Files</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+function nav() {
+  window.location.href = "../course_recapsheet/course_recap.html"
+}
+
+</script>
+
+<script>
+
+$(document).ready(function() {
+$('.menu-item').click(function() {
+  $(this).toggleClass('active'); // Toggle the 'active' class on menu item click
+});
+});
+</script>
